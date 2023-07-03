@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.jalihara.ui.home.HomeFragment"
+        android:label="JalIhara"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_tickets"
+            app:destination="@id/nav_tickets" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_about_us"
+            app:destination="@id/nav_about_us" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_tickets"
+        android:name="com.example.jalihara.ui.tickets.TicketsFragment"
+        android:label="JalIhara"
+        tools:layout="@layout/fragment_tickets" >
+        <action
+            android:id="@+id/action_nav_tickets_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_tickets_to_nav_about_us"
+            app:destination="@id/nav_about_us" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_about_us"
+        android:name="com.example.jalihara.ui.aboutUs.AboutUsFragment"
+        android:label="JalIhara"
+        tools:layout="@layout/fragment_about_us" >
+        <action
+            android:id="@+id/action_nav_about_us_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_about_us_to_nav_tickets"
+            app:destination="@id/nav_tickets" />
+    </fragment>
+</navigation>

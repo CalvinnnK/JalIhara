@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".ui.tickets.TicketsFragment">
+
+    <TextView
+        android:id="@+id/text_tickets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Art Performance Tickets"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ticket_RV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="5dp"
+         android:clipToOutline="false"
+         android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@+id/text_tickets"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/list_item_tickets" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
