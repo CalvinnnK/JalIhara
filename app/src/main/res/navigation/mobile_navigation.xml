@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_nav_home_to_nav_about_us"
             app:destination="@id/nav_about_us" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_login"
+            app:destination="@id/nav_logout" />
     </fragment>
 
     <fragment
@@ -43,4 +46,12 @@
             android:id="@+id/action_nav_about_us_to_nav_tickets"
             app:destination="@id/nav_tickets" />
     </fragment>
+
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="com.example.jalihara.LoginActivity"
+        android:label="JalIhara"
+        tools:layout="@layout/activity_login" >
+
+    </activity>
 </navigation>

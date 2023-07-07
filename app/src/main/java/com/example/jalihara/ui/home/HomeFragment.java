@@ -22,8 +22,6 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
-    private Carousel carousel;
-    private int [] images = {R.drawable.kecak_fire_dance, R.drawable.wayang_lemah};
     private ArrayList<SliderData> sliderDataArrayList = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
@@ -43,26 +41,6 @@ public class HomeFragment extends Fragment {
         sliderView.setScrollTimeInSec(3);
         sliderView.setAutoCycle(true);
         sliderView.startAutoCycle();
-
-//        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-
-//        carousel.setAdapter(new Carousel.Adapter() {
-//            @Override
-//            public int count() {
-//                return images.length;
-//            }
-//
-//            @Override
-//            public void populate(View view, int index) {
-//                ((ImageView)view).setImageResource(images[index]);
-//            }
-//
-//            @Override
-//            public void onNewItem(int index) {
-//
-//            }
-//        });
-
 
         return root;
     }

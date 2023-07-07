@@ -13,6 +13,9 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:text="Art Performance Tickets"
+        android:padding="8dp"
+        android:textColor="@color/blue_secondary"
+        android:fontFamily="@font/notosans_semibold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
