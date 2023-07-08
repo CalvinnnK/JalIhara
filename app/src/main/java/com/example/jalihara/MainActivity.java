@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
             username= bundle.getString("username");
         }
 
-        Log.d(TAG, "USERNAME " + username );
-
         setSupportActionBar(binding.appBarMain.toolbar);
 
         DrawerLayout drawer = binding.drawerLayout;

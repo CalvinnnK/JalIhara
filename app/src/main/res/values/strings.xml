@@ -64,6 +64,19 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="about_us_welcome">At JalIhara, we believe that art has the power to inspire, engage, and transform lives. We are a dedicated team of art enthusiasts and technology professionals who have come together to create a seamless platform for discovering and booking your favorite art performances.</string>
 
+    <string name="our_missions">Our mission is to connect art lovers with exceptional performances and provide a convenient, user-friendly experience for discovering and securing tickets. We strive to be the go-to destination for art enthusiasts, offering a diverse range of performances that cater to every taste and preference.</string>
+
+    <string name="dicover">JalIhara provides a curated selection of art performances, including theater, dance, music, and more. Whether you are a seasoned theatergoer or a curious newcomer, our platform allows you to explore an array of shows and discover new artists, genres, and venues. With JalIhara, you can broaden your horizons and embark on unforgettable artistic experiences.</string>
+
+    <string name="secure">We understand the importance of hassle-free ticketing, which is why we have designed our app to be intuitive and user-friendly. With just a few taps, you can search for performances, view seating options, and securely purchase your tickets. Our commitment to data security ensures that your personal information and payment details are always protected.</string>
+
+    <string name="join_us">We invite you to embark on a journey of artistic discovery with JalIhara. Whether you are looking for a night of riveting theater, mesmerizing dance, soulful music, or any other form of artistic expression, we are here to connect you with the performances that speak to your soul.</string>
+
+    <string name="contact_us1">We are here to help and answer any questions you may have. Whether you need assistance with ticket purchases, have feedback to share, or simply want to reach out, our team at JalIhara is ready to assist you.</string>
+    <string name="contact_us2">Our dedicated customer support team is available to provide prompt and friendly assistance. If you have any inquiries regarding ticket bookings, event details, or account-related matters, please do not hesitate to get in touch. We value your experience with JalIhara and strive to address any concerns promptly.</string>
+
+    <string name="reach_us">We appreciate your patience and will make every effort to respond to your inquiries as quickly as possible. Our goal is to ensure that you have a smooth and enjoyable experience using JalIhara.</string>
 
 </resources>

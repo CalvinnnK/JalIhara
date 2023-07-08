@@ -31,5 +31,4 @@
         tools:listitem="@layout/list_item_tickets" />
 
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
@@ -44,6 +46,7 @@
                 android:id="@+id/usernameEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="text"
                 android:maxLines="1"
                 android:textColor="@color/blue_secondary"
                 android:textCursorDrawable="@drawable/cursor_color" />
@@ -67,6 +70,7 @@
                 android:id="@+id/passwordEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:maxLines="1"
                 android:textColor="@color/blue_secondary"
                 android:textCursorDrawable="@drawable/cursor_color" />

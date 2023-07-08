@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.TicketFormActivity">
+
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolbarLayout"
@@ -40,170 +43,189 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linear1"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="25dp"
-        android:orientation="vertical"
+        android:scrollbars="none"
         app:layout_constraintTop_toBottomOf="@+id/toolbarLayout"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/ticket_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Title"
-            android:textColor="@color/blue_primary"
-            android:textSize="24sp"
-            android:paddingVertical="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbarLayout"/>
-
-        <ImageView
-            android:id="@+id/ticket_image"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:src="@drawable/legong_dance"/>
-
-        <TextView
-            android:id="@+id/ticket_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:justificationMode="inter_word"
-            android:text="Description"
-            />
-
-        <TextView
-            android:id="@+id/ticket_fill_form"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:justificationMode="inter_word"
-            android:textAlignment="textStart"
-            android:paddingVertical="10dp"
-            android:text="One more step to enjoy your"
-            />
-        
-        
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/linear2"
-            android:orientation="horizontal"
-            android:paddingVertical="5dp"
+            android:id="@+id/linear1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="25dp"
+            android:paddingBottom="100dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ticket_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textColor="@color/blue_primary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:paddingVertical="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbarLayout"/>
+
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:padding="5dp"
-                android:layout_gravity="bottom"
-                android:src="@drawable/user"/>
+                android:id="@+id/ticket_image"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:src="@drawable/legong_dance"/>
+
+            <TextView
+                android:id="@+id/ticket_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="15dp"
+                android:justificationMode="inter_word"
+                android:text="Description"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/ticket_fill_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:justificationMode="inter_word"
+                android:textAlignment="textStart"
+                android:paddingVertical="10dp"
+                android:text="One more step to enjoy your"
+                android:textColor="@color/black"
+                />
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:orientation="vertical"
+                android:id="@+id/linear2"
+                android:orientation="horizontal"
+                android:paddingVertical="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:text="Name"
-                    android:textColor="@color/blue_primary"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="5dp"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/user"/>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/usernameLayout"
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp">
-                    <EditText
-                        android:id="@+id/usernameEdit"
+                    android:layout_height="wrap_content">
+
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/blue_secondary"
-                        android:maxLines="1"
-                        android:textCursorDrawable="@drawable/cursor_color"/>
+                        android:layout_height="20dp"
+                        android:text="Name"
+                        android:textColor="@color/blue_primary"/>
 
-                </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/usernameLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp">
+                        <EditText
+                            android:id="@+id/usernameEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/blue_secondary"
+                            android:maxLines="1"
+                            android:textCursorDrawable="@drawable/cursor_color"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.appcompat.widget.LinearLayoutCompat>
-        </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/linear3"
-            android:orientation="horizontal"
-            android:paddingVertical="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:padding="5dp"
-                android:layout_gravity="bottom"
-                android:src="@drawable/tickets"/>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:orientation="vertical"
+                android:id="@+id/linear3"
+                android:orientation="horizontal"
+                android:paddingVertical="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:text="Quantity"
-                    android:textColor="@color/blue_primary"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="5dp"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/tickets"/>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/qtyLayout"
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="55dp">
-                    <EditText
-                        android:id="@+id/qtyEdit"
+                    android:layout_height="wrap_content">
+
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/blue_secondary"
-                        android:maxLines="1"
-                        android:textCursorDrawable="@drawable/cursor_color"/>
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:layout_height="20dp"
+                        android:text="Quantity"
+                        android:textColor="@color/blue_primary"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/qtyLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp">
+                        <EditText
+                            android:id="@+id/qtyEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/blue_secondary"
+                            android:maxLines="1"
+                            android:textCursorDrawable="@drawable/cursor_color"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Choose the booth type"
+                android:textColor="@color/blue_primary"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_primary"
+                    android:text="VIP"
+                    android:textColor="@color/black"
+                    style="@style/Widget.App.RadioButton"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/blue_primary"
+                    android:text="Standard"
+                    android:textColor="@color/black"
+                    style="@style/Widget.App.RadioButton"/>
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blue_primary"
+                android:textAllCaps="false"
+                android:text="Submit"
+                android:textColor="@color/white"/>
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="Choose the booth type"
-            android:textColor="@color/blue_primary"/>
+    </ScrollView>
 
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <RadioButton
-                android:id="@+id/radioButton1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="VIP" />
 
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Standard" />
-
-        </RadioGroup>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/submitBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue_primary"
-            android:textAllCaps="false"
-            android:text="Submit"
-            android:textColor="@color/white"/>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
