@@ -53,6 +53,35 @@ public class TicketFormActivity extends AppCompatActivity {
             }
         });
 
+        binding.submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                validation();
+            }
+        });
 
     }
+
+    private void validation(){
+        String username = binding.usernameEdit.getText().toString();
+        String qty = binding.qtyEdit.getText().toString();
+        if(qty.isEmpty()){qty = "0";}
+        Integer intQty = Integer.valueOf(qty);
+
+        if(username.length() <= 5){
+            binding.usernameLayout.setError("Username must be longer than 5 characters");
+        }
+        else if(intQty<=0) {
+            binding.qtyLayout.setError("Input a valid number");
+        }
+        else if(binding.radioGroup.getCheckedRadioButtonId()==-1) {
+            binding.radioError.setText("Please select booth type");
+        }
+        else{
+            finish();
+        }
+
+    }
+
+
 }
