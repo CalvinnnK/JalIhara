@@ -62,14 +62,24 @@ public class LoginActivity extends AppCompatActivity {
         if(username.length() <= 5){
             binding.usernameLayout.setError("Username must be longer than 5 characters");
         }
-        else if(password.length() <= 8){
+        else{
+            binding.usernameLayout.setError(null);
+            binding.usernameLayout.setErrorEnabled(false);
+        }
+        if(password.length() <= 8){
             binding.passwordLayout.setError("Password must be longer than 8 characters");
         }
-        else if(username.length() > 5 && password.length() > 8){
+        else{
+            binding.passwordLayout.setError(null);
+            binding.passwordLayout.setErrorEnabled(false);
+        }
+
+        if(username.length() > 5 && password.length() > 8){
+            binding.usernameLayout.setErrorEnabled(false);
+            binding.passwordLayout.setErrorEnabled(false);
             Intent intent = new Intent(this, MainActivity.class);
             intent.putExtra("username", username);
             startActivity(intent);
-
         }
     }
 

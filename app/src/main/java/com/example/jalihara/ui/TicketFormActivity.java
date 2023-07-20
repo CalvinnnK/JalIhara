@@ -80,13 +80,26 @@ public class TicketFormActivity extends AppCompatActivity {
         if(username.length() <= 5){
             binding.usernameLayout.setError("Username must be longer than 5 characters");
         }
-        else if(intQty<=0) {
+        else {
+            binding.usernameLayout.setErrorEnabled(false);
+        }
+        if(intQty<=0) {
             binding.qtyLayout.setError("Input a valid number");
         }
-        else if(binding.radioGroup.getCheckedRadioButtonId()==-1) {
+        else{
+            binding.qtyLayout.setErrorEnabled(false);
+        }
+        if(binding.radioGroup.getCheckedRadioButtonId()==-1) {
             binding.radioError.setText("Please select booth type");
         }
         else{
+            binding.radioError.setText("");
+        }
+        if(username.length()>5 && intQty>0 && binding.radioGroup.getCheckedRadioButtonId()!=-1){
+            binding.usernameLayout.setErrorEnabled(false);
+            binding.qtyLayout.setErrorEnabled(false);
+            binding.radioError.setText("");
+
             Intent move = new Intent(this, MainActivity.class);
             builder.setMessage("Thank you for your order " + username)
                     .setCancelable(false)

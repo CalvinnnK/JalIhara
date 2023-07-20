@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/blue_primary</item>
         <!-- Customize your theme here. -->
+        <item name="android:actionMenuTextColor">@color/black</item>
     </style>
 
     <style name="Theme.JalIhara.NoActionBar">
@@ -21,6 +22,7 @@
         <item name="colorSecondary">@color/blue_secondary</item>
         <item name="android:statusBarColor">@color/blue_primary</item>
         <item name="buttonTint">@color/blue_primary</item>
+        <item name="android:actionMenuTextColor">@color/black</item>
     </style>
 
     <style name="Widget.App.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
