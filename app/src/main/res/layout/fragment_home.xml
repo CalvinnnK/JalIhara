@@ -68,7 +68,7 @@
                 app:sliderIndicatorRadius="2dp"
                 app:sliderIndicatorSelectedColor="#5A5A5A"
                 app:sliderIndicatorUnselectedColor="#FFF"
-                app:sliderScrollTimeInSec="3" />
+                app:sliderScrollTimeInSec="1" />
 
             </androidx.cardview.widget.CardView>
 
@@ -122,34 +122,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_columnWeight="1"
-                    app:srcCompat="@drawable/kecak" />
+                    app:srcCompat="@drawable/reog_dance" />
             </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="175dp"
-                android:layout_columnWeight="1"
-                app:cardCornerRadius="5dp"
-                android:clipToPadding="false"
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_columnWeight="1"
-                    app:srcCompat="@drawable/kecak" />
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="175dp"
-                android:layout_columnWeight="1"
-                app:cardCornerRadius="5dp"
-                android:clipToPadding="false"
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_columnWeight="1"
-                    app:srcCompat="@drawable/kecak" />
-            </androidx.cardview.widget.CardView>
+
 
         </GridLayout>
 

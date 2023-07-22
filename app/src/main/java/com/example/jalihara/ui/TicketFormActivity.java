@@ -1,12 +1,22 @@
 package com.example.jalihara.ui;
 
+import static com.google.android.material.internal.ViewUtils.hideKeyboard;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -28,6 +38,30 @@ public class TicketFormActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         builder = new AlertDialog.Builder(this);
 
+        binding.usernameEdit.setHint("Enter your name");
+        binding.qtyEdit.setHint("Enter the quantity");
+
+        binding.usernameEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    hideKeyboard(v);
+                }
+            }
+        });
+
+        binding.qtyEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    hideKeyboard(v);
+                }
+            }
+        });
+
+
+
+
         binding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +79,21 @@ public class TicketFormActivity extends AppCompatActivity {
         binding.ticketTitle.setText(ticket_title);
         binding.ticketDesc.setText(ticket_desc);
         binding.ticketImage.setImageResource(ticket_image);
-        binding.ticketFillForm.setText("One more step to enjoy your " + ticket_title + " performance, please fill below form");
+
+        String desc = "One more step to enjoy your " + ticket_title + " performance, please fill below form";
+
+
+        SpannableString desc1 = new SpannableString(desc);
+
+        // Find the starting and ending indexes of the ticket_title in the text
+        int startIndex = desc.indexOf(ticket_title);
+        int endIndex = startIndex + ticket_title.length();
+
+        // Set the color for the ticket_title part
+        int desiredColor = Color.parseColor("#0056E0");
+        desc1.setSpan(new ForegroundColorSpan(desiredColor), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        binding.ticketFillForm.setText(desc1);
 
         RadioGroup radioGroup = binding.radioGroup;
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -76,9 +124,10 @@ public class TicketFormActivity extends AppCompatActivity {
         if(qty.isEmpty()){qty = "0";}
         Integer intQty = Integer.valueOf(qty);
 
+        int desiredColor = Color.parseColor("#0056E0");
 
-        if(username.length() <= 5){
-            binding.usernameLayout.setError("Username must be longer than 5 characters");
+        if(username.length() == 0){
+            binding.usernameLayout.setError("Name cannot be empty");
         }
         else {
             binding.usernameLayout.setErrorEnabled(false);
@@ -95,13 +144,13 @@ public class TicketFormActivity extends AppCompatActivity {
         else{
             binding.radioError.setText("");
         }
-        if(username.length()>5 && intQty>0 && binding.radioGroup.getCheckedRadioButtonId()!=-1){
+        if(username.length()>0 && intQty>0 && binding.radioGroup.getCheckedRadioButtonId()!=-1){
             binding.usernameLayout.setErrorEnabled(false);
             binding.qtyLayout.setErrorEnabled(false);
             binding.radioError.setText("");
 
             Intent move = new Intent(this, MainActivity.class);
-            builder.setMessage("Thank you for your order " + username)
+            builder.setMessage("Thank you for your order " + username +"!")
                     .setCancelable(false)
                     .setPositiveButton("Back to Home", new DialogInterface.OnClickListener() {
                         @Override
@@ -110,17 +159,18 @@ public class TicketFormActivity extends AppCompatActivity {
                             startActivity(move);
                             finish();
                         }
-                    })
-                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-                        }
                     });
             AlertDialog alert = builder.create();
             alert.setTitle("Purchase Success");
             alert.show();
+            Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+            pbutton.setTextColor(desiredColor);
         }
     }
 
+    public void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
 
 }

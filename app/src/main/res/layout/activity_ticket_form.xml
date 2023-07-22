@@ -109,6 +109,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="Name"
+                    android:paddingLeft="50dp"
                     android:textColor="@color/blue_primary"/>
 
 
@@ -159,7 +160,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="Quantity"
+                    android:text="Number of tickets"
+                    android:paddingLeft="50dp"
                     android:textColor="@color/blue_primary"/>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -235,7 +237,8 @@
                 android:layout_height="wrap_content"
                 android:paddingVertical="5dp"
                 android:text=""
-                android:textColor="@color/red"/>
+                android:textSize="12sp"
+                android:textColor="#B5251D"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/submitBtn"

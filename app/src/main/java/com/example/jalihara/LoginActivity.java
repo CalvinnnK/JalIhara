@@ -59,18 +59,22 @@ public class LoginActivity extends AppCompatActivity {
         //get username
         String username = binding.usernameEdit.getText().toString();
         String password = binding.passwordEdit.getText().toString();
-        if(username.length() <= 5){
+        if(username.length() <= 5 && username.length() > 0){
             binding.usernameLayout.setError("Username must be longer than 5 characters");
         }
+        else if(username.length() == 0){
+            binding.usernameLayout.setError("Username cannot be empty");
+        }
         else{
-            binding.usernameLayout.setError(null);
             binding.usernameLayout.setErrorEnabled(false);
         }
-        if(password.length() <= 8){
+        if(password.length() <= 8 && password.length() > 0){
             binding.passwordLayout.setError("Password must be longer than 8 characters");
         }
+        else if(password.length() == 0){
+            binding.passwordLayout.setError("Password cannot be empty");
+        }
         else{
-            binding.passwordLayout.setError(null);
             binding.passwordLayout.setErrorEnabled(false);
         }
 
